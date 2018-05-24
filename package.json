@@ -1,0 +1,45 @@
+{
+  "name": "id",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "test": "./node_modules/mocha/bin/mocha -t 200000 ./tests/api.test.js",
+    "tests-unit": "grunt mochaUnitTest"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "~1.17.1",
+    "colors": "^1.1.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
+    "debug": "^2.6.9",
+    "email-validation": "^0.1.2",
+    "express": "^4.16.2",
+    "express-validator": "^4.3.0",
+    "jsonwebtoken": "^7.4.3",
+    "mocha": "^4.0.1",
+    "mongoose": "^4.13.3",
+    "morgan": "~1.8.1",
+    "npm": "^5.5.1",
+    "test": "^0.6.0",
+    "unirest": "^0.5.1",
+    "uuid": "^3.0.0",
+    "validator": "^9.1.1",
+    "winston": "^2.4.0",
+    "winston-color": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "method-override": "^2.3.10",
+    "mockgoose": "^7.3.3",
+    "node-mocks-http": "^1.6.6",
+    "nodemon": "^1.12.1",
+    "pow-mongoose-fixtures": "^0.3.0",
+    "sinon": "^2.4.1",
+    "sinon-mongoose": "^2.0.2"
+  }
+}

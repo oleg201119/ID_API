@@ -1,0 +1,257 @@
+{
+	"info": {
+		"name": "ID API",
+		"_postman_id": "fd807e0d-8994-8721-63ee-3bae9b1c3f12",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test Endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Response msm should be: We arrived at the api! Success!\"] = jsonData.message === 'We arrived at the api! Success!';"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-gatekeeper-key",
+						"value": "newapikey"
+					},
+					{
+						"key": "x-gatekeeper-appname",
+						"value": "sudoku"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{id-domain}}/test",
+					"host": [
+						"{{id-domain}}"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Response should be Gatekeeper v0.1\"] = response.message === 'Gatekeeper v0.1';"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-gatekeeper-key",
+						"value": "newapikey"
+					},
+					{
+						"key": "x-gatekeeper-appname",
+						"value": "sudoku"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{id-domain}}",
+					"host": [
+						"{{id-domain}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Response should be Gatekeeper v0.1\"] = response.message === 'Gatekeeper v0.1';"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "newapikey"
+					},
+					{
+						"key": "x-gatekeeper-appname",
+						"value": "sudoku"
+					},
+					{
+						"key": "x-gatekeeper-domain",
+						"value": "hongkong"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userID",
+							"value": "212314123",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "fname",
+							"value": "Chan",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "lname",
+							"value": "Donnie",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "mnames",
+							"value": "Donnie",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "mr",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"value": "http://https://s3.console.aws.amazon.com/234432-234234-234-2423",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "KowLon",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "idcard",
+							"value": "HK343242",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "driverlic",
+							"value": "HKDDA434345",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "passport",
+							"value": "CHNHK34242342",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{id-domain}}/create",
+					"host": [
+						"{{id-domain}}"
+					],
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Response should be Gatekeeper v0.1\"] = response.message === 'Gatekeeper v0.1';"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "newapikey"
+					},
+					{
+						"key": "x-gatekeeper-appname",
+						"value": "sudoku"
+					},
+					{
+						"key": "x-gatekeeper-domain",
+						"value": "hongkong"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userID",
+							"value": "212314123",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{id-domain}}/remove",
+					"host": [
+						"{{id-domain}}"
+					],
+					"path": [
+						"remove"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
